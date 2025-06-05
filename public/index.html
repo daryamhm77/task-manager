@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Manager</h1>
+
+      <div class="form-group">
+        <h3>Sign Up</h3>
+        <input type="text" id="signup-username" placeholder="Username" />
+        <input type="password" id="signup-password" placeholder="Password" />
+        <button onclick="signup()">Sign Up</button>
+      </div>
+
+      <div class="form-group">
+        <h3>Login</h3>
+        <input type="text" id="login-username" placeholder="Username" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+      </div>
+
+      <div class="form-group">
+        <h3>Create Task</h3>
+        <input type="text" id="task-title" placeholder="Title" />
+        <textarea id="task-desc" placeholder="Description"></textarea>
+
+        <select id="task-status">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+
+        <button onclick="createTask()">Create</button>
+      </div>
+
+      <div class="form-group">
+        <h3>Your Tasks</h3>
+        <button onclick="fetchTasks()">Get Tasks</button>
+        <div id="task-list"></div>
+      </div>
+    </div>
+
+    <div
+      id="edit-form-container"
+      style="
+        display: none;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+      "
+    >
+      <h3>Edit Task</h3>
+      <input type="hidden" id="edit-task-id" />
+
+      <input type="text" id="edit-task-title" placeholder="Title" />
+      <textarea id="edit-task-desc" placeholder="Description"></textarea>
+
+      <select id="edit-task-status">
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+
+      <button onclick="submitEdit()">Save Changes</button>
+      <button onclick="cancelEdit()">Cancel</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
